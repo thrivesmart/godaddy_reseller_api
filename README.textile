@@ -5,6 +5,41 @@ Connect with your app to the GoDaddy Reseller API to automatically buy and sell 
 h2. Usage
 
 <pre>
-  godaddy = GoDaddyReseller::API.new('username', 'password')
+  godaddy = GoDaddyReseller::API.new('username', 'password') # usually in an initializer
   godaddy.authenticate # tests your login credentials
+  godaddy.run_certification # runs the cerfication script, required to open a production reseller account
 </pre>
+
+
+h2. Installation
+
+To enable the library your Rails 2.1 (or greater) project, use the gem configuration method in "<code>config/environment.rb</code>"
+
+<pre>
+Rails::Initializer.run do |config|
+  config.gem 'uuid' # UUID required by this gem, for now 
+  config.gem 'thrivesmart-godaddy_reseller_api', :lib => 'godaddy_reseller_api', :source => 'http://gems.github.com'
+end
+</pre>
+
+The <code>:lib</code> is important, because rails gets confused when the name of the gem is different from the library.
+
+And of course, run 
+
+<pre>
+  rake gems:install
+</pre>
+
+To get them installed on your system.
+
+Optionally, to unpack it into your application, just run:
+
+<pre>
+  rake gems:unpack GEM=thrivesmart-godaddy_reseller_api
+</pre>
+
+
+
+h2. Copyright & License
+
+Copyright (c) 2009 ThriveSmart, LLC, released under the MIT license
