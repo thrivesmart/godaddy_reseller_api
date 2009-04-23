@@ -1,0 +1,4 @@
+# Ignore Log Directory
+tmp/**/*
+.DS_Store
+*.gem

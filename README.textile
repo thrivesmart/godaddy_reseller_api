@@ -1,0 +1,10 @@
+h1. GoDaddy Reseller API 0.0.1
+
+Connect with your app to the GoDaddy Reseller API to automatically buy and sell domains and such!
+
+h2. Usage
+
+<pre>
+  godaddy = GoDaddyReseller::API.new('username', 'password')
+  godaddy.authenticate # tests your login credentials
+</pre>
